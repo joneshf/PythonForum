@@ -1,5 +1,5 @@
-from PythonForum import app
-from PythonForum.database import boards
+from .. import app
+from ..database import boards
 from flask import render_template
 
 @app.route("/board/<board_id>/")

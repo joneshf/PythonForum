@@ -1,7 +1,7 @@
 import os
 
 from flask import send_from_directory
-from PythonForum import app
+from .. import app
 
 @app.route('/favicon.ico')
 def favicon():

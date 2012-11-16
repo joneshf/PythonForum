@@ -3,6 +3,9 @@ from mongoengine import *
 import sys
 import shortuuid
 
+if __name__ != "__main__":
+    sys.exit(1)
+
 try:
     host = sys.argv[1]
     cont = sys.argv[3]
@@ -16,7 +19,7 @@ if not cont:
 db = connect("forum", host=host)
 
 
-from PythonForum.database import forum, categories, boards, threads, posts, login
+from ..database import forum, categories, boards, threads, posts, login
 
 # drop all the documents!
 for document in [forum.Forum, categories.Category, boards.Board, threads.Thread, posts.Post]:
@@ -62,9 +65,9 @@ demo_user_1.save()
 demo_user_2 = login.User(email="test@test2.com", username="davebob", active=True)
 demo_user_2.save()
 
-posts = [posts.Post(author=demo_user_1, tile="Reply number 1", content="Fuck your couch"),
-         posts.Post(author=demo_user_2, tile="Reply number 2", content="Fuck your couch"),
-         posts.Post(author=demo_user_1, tile="Reply number 3", content="Fuck your couch"),]
+posts = [posts.Post(author=demo_user_1, tile="Reply number 1", content="Demo"),
+         posts.Post(author=demo_user_2, tile="Reply number 2", content="Demo"),
+         posts.Post(author=demo_user_1, tile="Reply number 3", content="Demo"),]
 for post in posts:
     post.save()
 

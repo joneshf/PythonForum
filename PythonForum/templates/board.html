@@ -3,7 +3,7 @@
 {% block content %}
 <div class="well">
     <ul class="breadcrumb">
-        <li><a href="#">Board Index</a> <span class="divider">></span></li>
+        <li><a href="/">Board Index</a> <span class="divider">></span></li>
         <li><a href="#">General</a> <span class="divider">></span></li>
         <li class="active">Python General</li>
     </ul>
@@ -54,12 +54,12 @@
 
             <p class="span2">{{ topic.author.username }}</p>
 
-            <p class="span3">{{ topic.date }}/p>
+            <p class="span3">{{ topic.date }}</p>
         </li>
         {% endif %}
         {% endfor %}
 
-        <!-- DEMO -->
+        <!-- DEMO
         <li class="row">
             <p class="span7">
                 <a href="#">Demo title</a>
@@ -67,7 +67,7 @@
             <p class="span2">Demo author</p>
             <p class="span3">Demo date</p>
         </li>
-
+        -->
     </ul>
 </div>
 {% endblock %}

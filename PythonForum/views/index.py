@@ -1,5 +1,5 @@
-from PythonForum import app
-from PythonForum.database.forum import Forum
+from .. import app
+from ..database.forum import Forum
 from flask import render_template, flash
 
 @app.route("/")

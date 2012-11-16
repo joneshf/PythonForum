@@ -1,6 +1,6 @@
-from PythonForum import app
+from .. import app
 from flask import render_template
-from PythonForum.database.threads import Thread
+from ..database.threads import Thread
 
 @app.route("/topic/<topic_uuid>/")
 def topic(topic_uuid):

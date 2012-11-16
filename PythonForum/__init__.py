@@ -37,6 +37,7 @@ import views.board
 import views.index
 import views.favicon
 import views.topic
+import views.errors
 
 # API views.
 import views.personal_api
