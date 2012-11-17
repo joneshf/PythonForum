@@ -27,6 +27,10 @@ def time_at_server():
     """Generic default testy route. Handy for debugging."""
     return time.asctime()
 
+@app.route("/google980b6417f3302651.html")
+def google_auth():
+    return render_template("google980b6417f3302651.html")
+
 @app.route("/persona/test")
 def index():
     """Obsolete test for persona login."""
@@ -45,3 +49,13 @@ import views.public_api
 import views.private_api
 
 # All routes have now been registered.
+
+ADMINS = ['admin@pythonforum.org']
+if not app.debug:
+    import logging
+    from logging.handlers import SMTPHandler
+    mail_handler = SMTPHandler('127.0.0.1',
+        'server-error@example.com',
+        ADMINS, 'YourApplication Failed')
+    mail_handler.setLevel(logging.ERROR)
+    app.logger.addHandler(mail_handler)
