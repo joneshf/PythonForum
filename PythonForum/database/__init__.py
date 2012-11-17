@@ -12,7 +12,8 @@ except ImportError:
     host = os.environ.get("PF_MONGO_SERVER", "mongodb://localhost/pf")
 
 try:
-    forum = connect("forum", host=host)
+    forum = connect("pf", host=host)
 except Exception as e:
     print e.message
     print host
+    raise e

@@ -1,3 +1,4 @@
+tornado
 shortuuid
 mongoengine>=0.7.5
 Flask>=0.9
