@@ -1,7 +1,7 @@
 worker_processes 1;
 
 error_log /home/python-forum/deployment/access.log;
-pid /var/run/nginx.pid;
+pid /home/python-forum/deployment/nginx.pid;
 
 events {
     worker_connections 1024;
