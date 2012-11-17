@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Python Forum - You broke it you fool.{% endblock %}
+{% block content %}
+<div class="well" xmlns="http://www.w3.org/1999/html">
+    <h1 style="text-align: center;">Page Not Found</h1>
+    <!-- Fuck you css. I only wanted to center the image... -->
+    <img style="display: block; margin-left: auto; margin-right: auto" alt="Sad Snake" src="/static/Spiral.png">
+    <p style="text-align: center;">We can't find that page... Sorry.<br>
+
+    If you think it should be here. Then file a bug please!
+    <p style="text-align: center;"><a href="{{ url_for('index') }}">Go somewhere nicer, like the index.</a>
+</div>
+{% endblock %}
