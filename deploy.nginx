@@ -1,7 +1,6 @@
-user nginx;
 worker_processes 1;
 
-error_log error.log;
+error_log /home/python-forum/deployment/access.log;
 pid /var/run/nginx.pid;
 
 events {
@@ -21,7 +20,7 @@ http {
     include /etc/nginx/mime.types;
     default_type application/octet-stream;
 
-    access_log /var/log/nginx/access.log;
+    access_log /home/python-forum/deployment/access.log;
 
     keepalive_timeout 65;
     proxy_read_timeout 200;
@@ -46,20 +45,5 @@ http {
         # Allow file uploads
         client_max_body_size 50M;
 
-        location ^~ /static/ {
-            root /home/python-forum/deployment/PythonForum/PythonForum/static;
-            if ($query_string) {
-                expires max;
-            }
-        }
-
-        location / {
-            proxy_pass_header Server;
-            proxy_set_header Host $http_host;
-            proxy_redirect false;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Scheme $scheme;
-            proxy_pass http://frontends;
-        }
     }
 }
