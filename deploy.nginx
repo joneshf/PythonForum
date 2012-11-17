@@ -46,12 +46,11 @@ http {
         client_max_body_size 50M;
 
         location / {
-            proxy_pass_header Server;
-            proxy_set_header Host $http_host;
-            proxy_redirect off;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Scheme $scheme;
-            proxy_pass http://frontends;
+            try_files $uri @PythonForum;
+        }
+        location @PythonForum {
+            include uwsgi_params;
+            uwsgi_pass unix:/home/python-forum/deployment/uwsgi.sock;
         }
 
     }
