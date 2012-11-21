@@ -14,5 +14,5 @@ log.startLogging(DailyLogFile("python-forum.log", "."))
 resource = WSGIResource(reactor, reactor.getThreadPool(), app)
 site = Site(resource)
 
-reactor.listenTCP(8080, site)
+reactor.listenTCP(80, site)
 reactor.run()

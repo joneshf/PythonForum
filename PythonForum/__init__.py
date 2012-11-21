@@ -51,7 +51,6 @@ import views.private_api
 # All routes have now been registered.
 
 # Setup logging
-logging_password = raw_input("Enter the logging password: ")
 from custom_super_mega_non_blocking_logger import ThreadedTlsSMTPHandler
 from config import email_password
 
