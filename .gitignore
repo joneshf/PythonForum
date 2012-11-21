@@ -2,7 +2,7 @@
 *.pyo
 *.pyd
 
-db_config.py
+config.py
 PythonForum/database/journal/
 PythonForum/database/mongod.lock
 

@@ -50,12 +50,15 @@ import views.private_api
 
 # All routes have now been registered.
 
-ADMINS = ['admin@pythonforum.org']
+# Setup logging
+logging_password = raw_input("Enter the logging password: ")
+from custom_super_mega_non_blocking_logger import ThreadedTlsSMTPHandler
+from config import email_password
+
+ADMINS = ["jkbbwr@gmail.com"]
 if not app.debug:
     import logging
-    from logging.handlers import SMTPHandler
-    mail_handler = SMTPHandler('127.0.0.1',
-        'server-error@example.com',
-        ADMINS, 'YourApplication Failed')
+    mail_handler = ThreadedTlsSMTPHandler(("smtp.gmail.com", 587), 'admin@pythonforum.org', ADMINS,
+        'Error happened!', ('admin@pythonforum.com', email_password))
     mail_handler.setLevel(logging.ERROR)
     app.logger.addHandler(mail_handler)
