@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Python Forum - Get outa here.{% endblock %}
+{% block content %}
+<div class="well" xmlns="http://www.w3.org/1999/html">
+    <h1 style="text-align: center;">Access denied.</h1>
+    <!-- Fuck you css. I only wanted to center the image... -->
+    <img style="display: block; margin-left: auto; margin-right: auto" alt="Sad Snake" src="/static/Spiral.png">
+    <p style="text-align: center;">You gotta be logged in to access this location..<br>
+    Log in using persona in the top corner.
+    <p style="text-align: center;"><a href="{{ url_for('index') }}">Or go somewhere better, like the index.</a>
+</div>
+{% endblock %}
