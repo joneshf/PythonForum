@@ -1,15 +1,13 @@
 {% extends "base.html" %}
-{% block title %}Python Forum - Random Forum - You broke it you fool.{% endblock %}
+{% block title %}Python Forum - {{ board.name }}{% endblock %}
 {% block content %}
 <div class="well">
     <ul class="breadcrumb">
         <li><a href="/">Board Index</a> <span class="divider">></span></li>
-        <li><a href="#">General</a> <span class="divider">></span></li>
-        <li class="active">Python General</li>
+        <li><a href="#">{{ category.name }}</a> <span class="divider">></span></li>
+        <li class="active">{{ board.name }}</li>
     </ul>
-    <h2>Python General</h2>
-
-    <!-- TODO: Optimse away the TWO for loops. -->
+    <h2>{{ board.name }}</h2>
 
     <!-- Announcements -->
     <ul class="_forum">
@@ -44,7 +42,6 @@
 
             <p class="span3">Last Post</p>
         </li>
-        <!-- TODO: This needs to be replaced with a loop -->
         {% for topic in topics %}
         {% if not topic.is_announcement %}
         <li class="row">
@@ -58,16 +55,6 @@
         </li>
         {% endif %}
         {% endfor %}
-
-        <!-- DEMO
-        <li class="row">
-            <p class="span7">
-                <a href="#">Demo title</a>
-            </p>
-            <p class="span2">Demo author</p>
-            <p class="span3">Demo date</p>
-        </li>
-        -->
     </ul>
 </div>
 {% endblock %}

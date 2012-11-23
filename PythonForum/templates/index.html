@@ -3,12 +3,10 @@
 {% block content %}
 <div class="well">
     <h2>Forums</h2>
-
     {% for category in categories %}
     <ul class="_forum">
         <li>
             <h3>{{ category.name }}</h3>
-
             <p>{{ category.description }}</p>
         </li>
         {% for board in category.boards %}
@@ -16,19 +14,5 @@
         {% endfor %}
     </ul>
     {% endfor %}
-    <!--  example category.
-    <ul class="_forum">
-        <li>
-          <h3>Python Coding</h3>
-          <p>Python Coding Category description here</p>
-        </li>
-        <li>Beginners...</li>
-        <li>Graphical User Interfaces</li>
-        <li>Networking</li>
-        <li>Beginners...</li>
-        <li>Graphical User Interfaces</li>
-        <li>Networking</li>
-    </ul>
-    -->
 </div>
 {% endblock %}
