@@ -12,5 +12,5 @@ class Post(Document):
     one Post has one User
     """
     author = ReferenceField(User, dbref=False)
-    title = StringField()
     content = StringField()
+    date = StringField()

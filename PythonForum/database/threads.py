@@ -12,4 +12,4 @@ class Thread(Document):
     title = StringField()
     is_announcement = False
     topic_uuid = StringField()
-    date = DateTimeField()
+    date = StringField()

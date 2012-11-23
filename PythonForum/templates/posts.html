@@ -3,40 +3,21 @@
 {% block content %}
 <h3 class="well"> <a href="{{ url_for('index') }}">Python Forum</a> - {{ topic.title }}</h3>
 <ul class="_posts">
-    <li>
-        <div class="well">
-            <div class="row">
-                <div class="span3">
-                    <img src="{{ topic.author.icon }}" alt=""/>
-
-                    <h3>{{ topic.author.username }}</h3>
-
-                    <p>{{ topic.author.info }}</p>
-                </div>
-                <div class="span8 _justify">
-                    <p>{{ topic.posts[0].content }}</p>
-                </div>
-            </div>
-        </div>
-    </li>
     {% for post in topic.posts %}
-    <li>
-
-        <div class="well">
-            <div class="row">
-                <div class="span3">
-                    <img src="{{ post.author.icon }}" alt=""/>
-
-                    <h3>{{ post.author.username }}</h3>
-
-                    <p>{{ post.author.info }}</p>
-                </div>
-                <div class="span8 _justify">
-                    <p>{{ post.content }}</p>
+        <li>
+            <div class="well">
+                <div class="row">
+                    <div class="span3">
+                        <img src="http://placehold.it/200x200" alt=""/>
+                        <h3>{{ post.author.username }}</h3>
+                        <p>Additional Info</p>
+                    </div>
+                    <div class="span8 _justify">
+                        {{ post.content }}
+                    </div>
                 </div>
             </div>
-        </div>
-    </li>
+        </li>
     {% endfor %}
 </ul>
 {% endblock %}
