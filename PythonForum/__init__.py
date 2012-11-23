@@ -43,6 +43,7 @@ import views.favicon
 import views.topic
 import views.errors
 import views.sorry
+import views.reply
 
 # API views.
 import views.personal_api
@@ -52,13 +53,13 @@ import views.private_api
 # All routes have now been registered.
 
 # Setup logging
-#from custom_super_mega_non_blocking_logger import ThreadedTlsSMTPHandler
-#from config import email_password
+from custom_super_mega_non_blocking_logger import ThreadedTlsSMTPHandler
+from config import email_password
 
-#ADMINS = ["jkbbwr@gmail.com"]
-#if not app.debug:
-#    import logging
-#    mail_handler = ThreadedTlsSMTPHandler(("smtp.gmail.com", 587), 'admin@pythonforum.org', ADMINS,
-#        'Error happened!', ('admin@pythonforum.com', email_password))
-#    mail_handler.setLevel(logging.ERROR)
-#    app.logger.addHandler(mail_handler)
+ADMINS = ["jkbbwr@gmail.com"]
+if not app.debug:
+    import logging
+    mail_handler = ThreadedTlsSMTPHandler(("smtp.gmail.com", 587), 'admin@pythonforum.org', ADMINS,
+        'Error happened!', ('admin@python-forum.org', email_password))
+    mail_handler.setLevel(logging.ERROR)
+    app.logger.addHandler(mail_handler)
