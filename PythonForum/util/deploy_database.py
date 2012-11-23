@@ -90,12 +90,20 @@ forum = [
 ]
 
 
-from PythonForum.database.boards import *
-from PythonForum.database.login import *
-from PythonForum.database.categories import *
-from PythonForum.database.forum import *
-from PythonForum.database.posts import *
-from PythonForum.database.threads import *
+try:
+    from ..database.boards import *
+    from ..database.login import *
+    from ..database.categories import *
+    from ..database.forum import *
+    from ..database.posts import *
+    from ..database.threads import *
+except ImportError:
+    from PythonForum.database.boards import *
+    from PythonForum.database.login import *
+    from PythonForum.database.categories import *
+    from PythonForum.database.forum import *
+    from PythonForum.database.posts import *
+    from PythonForum.database.threads import *
 
 # Install some test users.
 test_users = [User(email="test1@test.com", username="test1", active=True),
