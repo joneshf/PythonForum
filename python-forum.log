@@ -1,4 +1,4 @@
-2012-11-23 04:54:08+0000 [-] Log opened.
+012-11-23 04:54:08+0000 [-] Log opened.
 2012-11-23 04:54:08+0000 [-] Traceback (most recent call last):
 2012-11-23 04:54:08+0000 [-]   File "C:/Users/jakob.warmachine/PycharmProjects/PythonForum/deploy.py", line 17, in <module>
 2012-11-23 04:54:08+0000 [-]     reactor.listenTCP(80, site)

@@ -1,9 +1,0 @@
-2012-11-22 19:16:45+0000 [-] Log opened.
-2012-11-22 19:16:45+0000 [-] Traceback (most recent call last):
-2012-11-22 19:16:45+0000 [-]   File "C:/Users/jakob.warmachine/PycharmProjects/PythonForum/deploy.py", line 17, in <module>
-2012-11-22 19:16:45+0000 [-]     reactor.listenTCP(80, site)
-2012-11-22 19:16:45+0000 [-]   File "C:\languages\Python27\lib\site-packages\twisted\internet\posixbase.py", line 476, in listenTCP
-2012-11-22 19:16:45+0000 [-]     p.startListening()
-2012-11-22 19:16:45+0000 [-]   File "C:\languages\Python27\lib\site-packages\twisted\internet\tcp.py", line 969, in startListening
-2012-11-22 19:16:45+0000 [-]     raise CannotListenError, (self.interface, self.port, le)
-2012-11-22 19:16:45+0000 [-] twisted.internet.error.CannotListenError: Couldn't listen on any:80: [Errno 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted.
