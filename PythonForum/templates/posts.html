@@ -19,5 +19,8 @@
             </div>
         </li>
     {% endfor %}
+    <form name="reply" action="{{ url_for('reply', topic_id=topic.topic_uuid) }}" method="get">
+        <input type="submit" value="Reply to topic" name="submit" class="btn btn-primary btn-large"/>
+    </form>
 </ul>
 {% endblock %}

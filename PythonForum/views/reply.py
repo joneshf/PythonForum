@@ -17,10 +17,11 @@ def reply(topic_id):
     if request.method == "POST":
         body = request.form.get("reply", False)
         if body:
-            topic = Thread.objects(topic_uuid=topic_id)
+            topic = Thread.objects(topic_uuid=topic_id).first()
             post = Post(author=current_user.user_in_db,content=body)
             post.save()
             topic.posts.append(post)
+            topic.save()
             return redirect(url_for("success", topic_uuid=topic_id))
         return redirect(url_for("failure", topic_uuid=topic_id))
     else:
