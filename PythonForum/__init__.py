@@ -32,10 +32,10 @@ def time_at_server():
 def google_auth():
     return render_template("google980b6417f3302651.html")
 
-@app.route("/persona/test")
+@app.route("/")
 def index():
-    """Obsolete test for persona login."""
-    return render_template("loginTest.html")
+    """Proper index function."""
+    return render_template("index.html")
 
 # Import application views here!
 import views.board
