@@ -1,12 +1,13 @@
 from flask import Flask, render_template, url_for
 from flask.ext.login import LoginManager
 from flask.ext.browserid import BrowserID
+import os
 import time
 
 app = Flask(__name__)
 app.version = "0.1a"
 # Secret key can change with each new version this forces all old logins to expire :)
-app.config['SECRET_KEY'] = '\xad\xdb\xe9o\x84\x03S\xa93\xc2X\x0ejlq\xad\xcd1\xb0Ub'
+app.config['SECRET_KEY'] = os.urandom(32)
 
 # Import here so database it can reach the app object.
 from database.login import get_user, get_user_by_id

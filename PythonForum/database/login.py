@@ -55,7 +55,7 @@ def get_user(data):
         print current_user
         if current_user is None:
             # User doesn't exist. Create user now
-            current_user = User(email=email, username=email, active=True)
+            current_user = User(email=email, username=email.split("@")[0], active=True)
             current_user.save()
         return Avatar(current_user.email, current_user.username, current_user.active, current_user.permissions, current_user)
     else:
